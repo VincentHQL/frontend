@@ -1,0 +1,43 @@
+cc_defaults {
+    name: "redroid_base",
+    gnu_extensions: false,
+    target: {
+        host: {
+            host_ldlibs: ["-lrt"],
+            cflags: ["-DREDROID_HOST"],
+            compile_multilib: "64",
+        },
+        // We don't need Darwin host-side builds
+        darwin: {
+            enabled: false,
+        },
+    },
+    cflags: ["-Werror", "-Wall", "-D_FILE_OFFSET_BITS=64"],
+}
+
+cc_defaults {
+    name: "redroid_guest_only",
+    vendor: true,
+    defaults: ["redroid_base"],
+}
+
+cc_defaults {
+    name: "redroid_guest_product_only",
+    // product_specific: true,
+    defaults: ["redroid_base"],
+}
+
+cc_defaults {
+    name: "redroid_host",
+    host_supported: true, // this "host" means (1)
+    device_supported: true, // this is for (2)
+    vendor_available: true,
+    defaults: ["redroid_base"],
+}
+
+cc_defaults {
+    name: "redroid_buildhost_only",
+    host_supported: true,
+    device_supported: false,
+    defaults: ["redroid_base"],
+}

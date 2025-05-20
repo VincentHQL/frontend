@@ -1,0 +1,20 @@
+cc_library {
+    name: "libredroid_websocket",
+    export_include_dirs: ["."],
+    srcs: [
+        "websocket_handler.cpp",
+        "websocket_server.cpp",
+    ],
+    shared_libs: [
+        "libbase",
+        "liblog",
+        "libssl",
+        "libcrypto",
+        "libredroid_utils",
+    ],
+    static_libs: [
+        "libcap",
+        "libwebsockets",
+    ],
+    defaults: ["redroid_buildhost_only"],
+}

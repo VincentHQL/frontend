@@ -1,0 +1,38 @@
+cc_library_headers {
+    name: "redroid_webrtc_signaling_headers",
+    export_include_dirs: ["./constants"],
+    host_supported: true,
+    vendor: true,
+}
+
+cc_binary_host {
+    name: "operator",
+    srcs: [
+        "client_handler.cpp",
+        "device_registry.cpp",
+        "device_handler.cpp",
+        "device_list_handler.cpp",
+        "server_config.cpp",
+        "main.cpp",
+        "signal_handler.cpp",
+    ],
+    header_libs: [
+        "redroid_webrtc_signaling_headers",
+    ],
+    shared_libs: [
+        "libcrypto",
+    ],
+    static_libs: [
+        "libbase",
+        "liblog",
+        "libjsoncpp",
+        "libssl",
+        "libcap",
+        "libgflags",
+        "libredroid_fs",
+        "libredroid_utils",
+        "libredroid_websocket",
+        "libwebsockets",
+    ],
+    defaults: ["redroid_buildhost_only"],
+}

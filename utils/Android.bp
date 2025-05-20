@@ -1,0 +1,49 @@
+
+cc_library {
+    name: "libredroid_utils",
+    export_include_dirs: ["."],
+    srcs: [
+        "size_utils.cpp",
+        "environment.cpp",
+        "files.cpp",
+    ],
+    shared: {
+        shared_libs: [
+            "libbase",
+            "libredroid_fs",
+            "libcrypto",
+        ],
+    },
+    static: {
+        static_libs: [
+            "libbase",
+            "libredroid_fs",
+        ],
+        shared_libs: [
+          "libcrypto", // libcrypto_static is not accessible from all targets
+        ],
+    },
+    defaults: ["redroid_host"],
+}
+
+// cc_test_host {
+//     name: "libredroid_utils_test",
+//     srcs: [
+//         "flag_parser_test.cpp",
+//         "unix_sockets_test.cpp",
+//     ],
+//     static_libs: [
+//         "libbase",
+//         "libredroid_fs",
+//         "libredroid_utils",
+//     ],
+//     shared_libs: [
+//         "libcrypto",
+//         "liblog",
+//         "libxml2",
+//     ],
+//     test_options: {
+//         unit_test: true,
+//     },
+//     defaults: ["redroid_host"],
+// }
