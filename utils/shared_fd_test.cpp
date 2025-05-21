@@ -1,5 +1,5 @@
-#include "shared_fd.h"
-#include "shared_select.h"
+#include "fs/shared_fd.h"
+#include "fs/shared_select.h"
 
 #include <stdlib.h>
 #include <unistd.h>

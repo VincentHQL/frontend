@@ -1,9 +1,9 @@
-#include "websocket_handler.h"
+#include "websocket/websocket_handler.h"
 
 #include <android-base/logging.h>
 #include <libwebsockets.h>
 
-#include "websocket_server.h"
+#include "websocket/websocket_server.h"
 
 namespace redroid {
 

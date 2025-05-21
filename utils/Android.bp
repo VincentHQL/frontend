@@ -1,27 +1,43 @@
 
 cc_library {
     name: "libredroid_utils",
-    export_include_dirs: ["."],
+    export_include_dirs: ["include"],
     srcs: [
+        "epoll.cpp",
+        "shared_buf.cpp",
+        "shared_fd.cpp",
+        "shared_fd_stream.cpp",
         "size_utils.cpp",
         "environment.cpp",
         "files.cpp",
+        "websocket_handler.cpp",
+        "websocket_server.cpp",
     ],
     shared: {
         shared_libs: [
             "libbase",
-            "libredroid_fs",
+            "liblog",
+            "libssl",
             "libcrypto",
         ],
     },
     static: {
         static_libs: [
             "libbase",
-            "libredroid_fs",
+            "liblog",
+            "libcap",
+            "libwebsockets",
         ],
         shared_libs: [
           "libcrypto", // libcrypto_static is not accessible from all targets
         ],
+    },
+    target: {
+        vendor: {
+            // Liblog does not have a vendor-static variant.
+            shared_libs: ["liblog"],
+            exclude_static_libs: ["liblog"],
+        },
     },
     defaults: ["redroid_host"],
 }

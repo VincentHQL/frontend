@@ -7,7 +7,7 @@
 #include <ostream>
 #include <streambuf>
 
-#include "shared_fd.h"
+#include "fs/shared_fd.h"
 
 namespace redroid {
 

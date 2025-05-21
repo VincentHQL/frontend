@@ -7,7 +7,7 @@
 
 #include <json/json.h>
 
-#include "websocket_handler.h"
+#include "websocket/websocket_handler.h"
 #include "device_registry.h"
 
 namespace redroid {

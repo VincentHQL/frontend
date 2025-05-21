@@ -1,4 +1,4 @@
-#include "files.h"
+#include "utils/files.h"
 
 #include <android-base/logging.h>
 
@@ -14,7 +14,7 @@
 #include <dirent.h>
 #include <vector>
 
-#include "shared_fd.h"
+#include "fs/shared_fd.h"
 
 namespace redroid {
 

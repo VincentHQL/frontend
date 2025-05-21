@@ -18,15 +18,6 @@ class Value;
 
 namespace redroid {
 
-class ConfigFragment {
-public:
-    virtual ~ConfigFragment();
-  
-    virtual std::string Name() const = 0;
-    virtual Json::Value Serialize() const = 0;
-    virtual bool Deserialize(const Json::Value&) = 0;
-};
-
 class RedroidConfig {
  public:
   static const RedroidConfig* Get();
@@ -34,14 +25,10 @@ class RedroidConfig {
   static std::unique_ptr<const RedroidConfig> GetFromFile(
       const std::string& path);
       
-  static bool ConfigExists();
-
   RedroidConfig();
   RedroidConfig(RedroidConfig&&);
   ~RedroidConfig();
   RedroidConfig& operator=(RedroidConfig&&);
-
-  bool LoadFragment(ConfigFragment&) const;
 
   struct DisplayConfig {
     int width;
@@ -51,7 +38,6 @@ class RedroidConfig {
   };
 
   std::vector<DisplayConfig> display_configs() const;
-  void set_display_configs(const std::vector<DisplayConfig>& display_configs);
 
  private:
   std::unique_ptr<Json::Value> dictionary_;

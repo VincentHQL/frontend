@@ -9,7 +9,7 @@
 
 #include "device_registry.h"
 #include "server_config.h"
-#include "websocket_handler.h"
+#include "websocket/websocket_handler.h"
 
 namespace redroid {
 

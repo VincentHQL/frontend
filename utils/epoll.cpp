@@ -1,4 +1,4 @@
-#include "epoll.h"
+#include "fs/epoll.h"
 
 #include <sys/epoll.h>
 
@@ -7,8 +7,8 @@
 #include <set>
 #include <shared_mutex>
 
-#include "shared_fd.h"
-#include "result.h"
+#include "fs/shared_fd.h"
+#include "utils/result.h"
 
 namespace redroid {
 

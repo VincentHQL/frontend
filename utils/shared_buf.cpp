@@ -3,8 +3,8 @@
 #include <thread>
 #include <vector>
 
-#include "shared_buf.h"
-#include "shared_fd.h"
+#include "fs/shared_buf.h"
+#include "fs/shared_fd.h"
 
 namespace redroid {
 

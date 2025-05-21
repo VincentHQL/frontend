@@ -9,8 +9,8 @@
 #include "client_handler.h"
 #include "device_handler.h"
 #include "device_list_handler.h"
-#include "websocket_handler.h"
-#include "websocket_server.h"
+#include "websocket/websocket_handler.h"
+#include "websocket/websocket_server.h"
 
 DEFINE_int32(http_server_port, 8443, "The port for the http server.");
 DEFINE_bool(use_secure_http, true, "Whether to use HTTPS or HTTP.");

@@ -1,4 +1,4 @@
-#include <websocket_server.h>
+#include <websocket/websocket_server.h>
 
 #include <string>
 #include <unordered_map>
@@ -6,8 +6,8 @@
 #include <android-base/logging.h>
 #include <libwebsockets.h>
 
-#include <files.h>
-#include <websocket_handler.h>
+#include <utils/files.h>
+#include <websocket/websocket_handler.h>
 
 namespace redroid {
 namespace {

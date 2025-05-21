@@ -7,7 +7,7 @@
 #include <android-base/logging.h>
 #include <libwebsockets.h>
 
-#include <websocket_handler.h>
+#include <websocket/websocket_handler.h>
 
 namespace redroid {
 class WebSocketServer {

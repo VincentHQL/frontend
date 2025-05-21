@@ -95,19 +95,6 @@ static std::vector<std::pair<std::string, std::string>> ParseHttpHeaders(
   return headers;
 }
 
-std::unique_ptr<redroid::AudioServer> CreateAudioServer() {
-  redroid::SharedFD audio_server_fd =
-      redroid::SharedFD::Dup(FLAGS_audio_server_fd);
-  close(FLAGS_audio_server_fd);
-  return std::make_unique<redroid::AudioServer>(audio_server_fd);
-}
-
-fruit::Component<redroid::CustomActionConfigProvider> WebRtcComponent() {
-  return fruit::createComponent()
-      .install(redroid::ConfigFlagPlaceholder)
-      .install(redroid::CustomActionsComponent);
-};
-
 int main(int argc, char** argv) {
   redroid::DefaultSubprocessLogging(argv);
   ::gflags::ParseCommandLineFlags(&argc, &argv, true);

@@ -1,9 +1,9 @@
-#include "shared_fd_stream.h"
+#include "fs/shared_fd_stream.h"
 
 #include <cstdio>
 #include <streambuf>
 
-#include "shared_buf.h"
+#include "fs/shared_buf.h"
 
 namespace redroid {
 

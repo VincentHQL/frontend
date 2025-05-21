@@ -1,4 +1,4 @@
-#include "shared_fd.h"
+#include "fs/shared_fd.h"
 
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -13,7 +13,7 @@
 #include <vector>
 
 #include "android-base/logging.h"
-#include "shared_select.h"
+#include "fs/shared_select.h"
 
 // #define ENABLE_GCE_SHARED_FD_LOGGING 1
 
